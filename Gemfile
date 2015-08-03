@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'volt', '0.9.4'
+gem 'volt-braintree', '~> 0.1.0'
 
 # volt uses mongo as the default data store.
 gem 'volt-mongo', '~> 0.1.0'
@@ -30,7 +31,6 @@ end
 # Asset compilation gems, they will be required when needed.
 gem 'csso-rails', '~> 0.3.4', require: false
 gem 'uglifier', '>= 2.4.0', require: false
-gem 'braintree'
 
 group :test do
   # Testing dependencies

@@ -1,5 +1,3 @@
-require 'braintree'
-
 Braintree::Configuration.environment = :sandbox
 Braintree::Configuration.merchant_id = 'ffdqc9fyffn7yn2j'
 Braintree::Configuration.public_key = 'qj65nndbnn6qyjkp'

@@ -11,6 +11,15 @@ module Main
 
     private
 
+    def process_payment
+      if page._payment_method_nonce
+        BraintreeTask.sale(page._payment_method_nonce).then do |transacton_id|
+          page._transaction_id = transacton_id
+        end
+      end
+      return false
+    end
+
     # The main template contains a #template binding that shows another
     # template.  This is the path to that template.  It may change based
     # on the params._component, params._controller, and params._action values.

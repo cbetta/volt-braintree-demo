@@ -4,6 +4,21 @@
 <:Body>
   <h1>Home</h1>
 
-  <form>
-    <:braintree>
+  {{ if page._transaction_id }}
+    <h2>Transaction ID:</h2>
+
+    <div class="well">
+      {{ page._transaction_id }}
+    </div>
+  {{ else }}
+    <form e-submit='process_payment'>
+      <:braintree />
+
+      <div class="text-right">
+        <input type="submit" value="Pay" class='btn btn-primary' />
+      </div>
+    </form>
+
   </form>
+
+  {{ end }}
